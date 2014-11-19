@@ -1,0 +1,19 @@
+header:
+  search: Search
+prev: Prev
+next: Next
+read_more: READ MORE
+comments: Comments
+comment: 
+  zero: "0 Comments"
+  one: "1 Comment"
+  other: "%d Comments"
+title: 
+  archives: Archives
+  category: Category
+  tag: Tag
+menu:
+  home: Home
+  archives: Archives
+  about: About
+  guestBook: GuestBook

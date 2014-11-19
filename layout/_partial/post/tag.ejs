@@ -1,0 +1,13 @@
+<% if (post.tags && post.tags.length && is_post()){ %>
+  <ul class="post-tag icon-tag fl">
+    <% post.tags.forEach(function(tag){ %>
+      <li><a href="<%- url_for(tag.path) %>">#<%= tag.name %></a></li>
+    <% }) %>
+  </ul>
+<% } else if (post.tags && post.tags.length) { %>
+  <ul class="post-tag home-tag icon-tag fl">
+    <% post.tags.forEach(function(tag){ %>
+      <li><a href="<%- url_for(tag.path) %>">#<%= tag.name %></a></li>
+    <% }) %>
+  </ul>
+<% } %>

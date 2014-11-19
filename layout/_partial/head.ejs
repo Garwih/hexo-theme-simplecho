@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = __('title.archives');
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('title.category') + ': '  + page.category;
+  } else if (is_tag()){
+    title = __('title.tag') + ': ' + page.tag;
+  }
+  %>
+  <title><% if (title){ %><%= title %> - <% } %><%= config.title %><% if (!title && config.subtitle && theme.subtitle_show){ %> - <%= config.subtitle %><% } %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+  <% } %>
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="<%- url_for() %>js/html5.js"></script>
+    <script type="text/javascript" src="<%- url_for() %>js/css3-mediaqueries.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="<%- url_for() %>css/base.css" media="all">
+  <link rel="stylesheet" href="<%- url_for() %>css/style.css">
+  <link rel="stylesheet" href="<%- url_for() %>css/highlight.css" media="all">
+
+</head>

@@ -1,0 +1,33 @@
+<article class="post">
+  <header class="post-head">
+    <%- partial('post/title') %>
+  </header>
+  <% if (post.images){ %>
+      <section class="post-images">
+        <a href="<%- url_for(post.path) %>">
+          <img src="<%- post.images %>" width="1000" height="400" alt="images">
+        </a>
+      </section>
+  <% } %>
+  <section class="post-content typo">
+    <%- post.content %>
+  </section>
+  <% if (post.tags && post.tags.length){ %>
+  <footer class="post-foot clear">
+    <%- partial('post/tag') %>
+  </footer>
+  <% } %>
+</article>
+<% if (!index && post.comments && config.disqus_shortname){ %>
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+<% } else if (!index && post.comments && theme.duoshuo_shortname) { %>
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="<%= post.layout %>-<%= post.slug %>" data-title="<%= post.title %>" data-url="<%= page.permalink %>"></div>
+  <!-- 多说评论框 end -->
+</section>
+<% } %>

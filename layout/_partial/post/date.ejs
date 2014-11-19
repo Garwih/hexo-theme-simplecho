@@ -1,0 +1,3 @@
+<% if(post.title) { %>
+<time datetime="<%= date_xml(post.date) %>" class="post-time"><%= date(post.date, date_format) %></time>
+<% } %>

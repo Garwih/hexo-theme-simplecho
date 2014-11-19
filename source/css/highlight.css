@@ -1,0 +1,102 @@
+.highlight {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #002b36;
+  color: #839496;
+  -webkit-text-size-adjust: none;
+}
+
+.comment,
+.diff .header,
+.doctype,
+.pi,
+.lisp .string,
+.javadoc {
+  color: #586e75;
+}
+
+/* Solarized Green */
+.keyword,
+.winutils,
+.method,
+.addition,
+.css .tag,
+.request,
+.status,
+.nginx .title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.number,
+.command,
+.string,
+.tag .value,
+.rules .value,
+.phpdoc,
+.dartdoc,
+.tex .formula,
+.regexp,
+.hexcolor,
+.link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.title,
+.localvars,
+.chunk,
+.decorator,
+.built_in,
+.identifier,
+.vhdl .literal,
+.id,
+.css .function {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.attribute,
+.variable,
+.lisp .body,
+.smalltalk .number,
+.constant,
+.class .title,
+.parent,
+.type,
+.link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.preprocessor,
+.preprocessor .keyword,
+.pragma,
+.shebang,
+.symbol,
+.symbol .string,
+.diff .change,
+.special,
+.attr_selector,
+.subst,
+.cdata,
+.css .pseudo,
+.header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.deletion,
+.important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.link_label {
+  color: #6c71c4;
+}
+
+.tex .formula {
+  background: #073642;
+}

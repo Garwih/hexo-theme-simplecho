@@ -1,0 +1,75 @@
+<% if (pagination == 2){ %>
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = __('title.archives');
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('title.category') + ': '  + page.category;
+  } else if (is_tag()){
+    title = __('title.tag') + ': ' + page.tag;
+  }
+  %>
+  <h1><%= title %></h1>
+  <% page.posts.each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+  <% if (page.total > 1){ %>
+    <nav class="page-nav">
+      <% if (page.prev){ %>
+        <a href="<%- url_for(page.prev_link) %>">&laquo; <%= __('prev') %></a>
+      <% } %>
+      <% if (page.next){ %>
+        <a href="<%- url_for(page.next_link) %>"><%= __('next') %> &raquo;</a>
+      <% } %>
+    </nav>
+  <% } %>
+<% } else { %>
+  <div id="archives">
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = __('title.archives');
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('title.category') + ': '  + page.category;
+  } else if (is_tag()){
+    title = __('title.tag') + ': ' + page.tag;
+  }
+  %>
+    <h1><%= title %></h1>
+  <% var last; %>
+  <% page.posts.each(function(post){ %>
+    <% var day = date(post.date, 'DD'), month = date(post.date, 'YYYY MMMM') %>
+    <% if(!last){ %>
+      <%  last = month; %>
+      <article class="month">
+        <time datetime="<%= date(post.date, 'YYYY-MM') %>" class="month-title"><%= last %></time>
+        <ul class="post-list">
+          <li><%= day %>: <a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
+    <% } else if (last == month) { %>
+      <li><%= day %>: <a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
+    <% } else { %>
+      <%  last = month; %>
+        </ul>
+      </article>
+      <article class="month">
+        <time datetime="<%= date(post.date, 'YYYY-MM') %>" class="month-title"><%= last %></time>
+        <ul class="post-list">
+          <li><%= day %>: <a href="<%- url_for(post.path) %>"><%= post.title %></a></li>
+    <% } %>
+  <% }) %>
+  </div>
+<% } %>

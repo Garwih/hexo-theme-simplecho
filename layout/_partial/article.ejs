@@ -1,0 +1,36 @@
+<article class="post">
+  <header class="post-head">
+    <%- partial('post/title') %>
+    <%- partial('post/date', {date_format: null}) %>
+  </header>
+  <% if (post.image){ %>
+      <section class="post-images">
+        <a href="<%- url_for(post.path) %>">
+          <img src="<%- post.image %>" alt="featured-image">
+        </a>
+      </section>
+  <% } %>
+  <section class="post-content typo">
+    <% if (post.excerpt && index){ %>
+      <%- post.excerpt %>
+    <% } else { %>
+      <%- post.content %>
+    <% } %>
+  </section>
+  <% if (post.excerpt || (post.comments && config.disqus_shortname) || (post.comments && theme.duoshuo_shortname) || (post.tags && post.tags.length) ){ %>
+  <footer class="post-foot">
+    <section class="post-foot-warp clear">
+    <%- partial('post/tag') %>
+    <% if (post.excerpt && index){ %>
+      <a href="<%- url_for(post.path) %>#more" class="post-foot-link fr"><%= __('read_more') %></a>
+    <% } else { %>
+      <% if (post.comments && config.disqus_shortname){ %>
+        <a href="<%- post.permalink %>#disqus_thread" class="post-foot-link fr"><%= __('comments') %></a>
+      <% } else if (post.comments && theme.duoshuo_shortname) { %>
+        <a href="<%- url_for(post.path) %>#comments" class="post-foot-link ds-thread-count fr" data-thread-key="<%= post.layout %>-<%= post.slug %>"><%= __('comments') %></a>
+      <% } %>
+    <% } %>
+    </section>
+  </footer>
+  <% } %>
+</article>

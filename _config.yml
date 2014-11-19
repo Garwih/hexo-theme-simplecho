@@ -1,0 +1,11 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives
+rss: /atom.xml
+favicon: /favicon.png
+subtitle_show: true
+
+# Main
+duoshuo_shortname: 
+duoshuo_home: true

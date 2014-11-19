@@ -1,0 +1,19 @@
+header:
+  search: 搜索
+prev: 上一页
+next: 下一页
+read_more: 阅读全文
+comments: 评论
+comment: 
+  zero: "评论：0"
+  one: "评论：1"
+  other: "评论：%d"
+title: 
+  archives: 归档
+  category: 分类
+  tag: 标签
+menu: 
+  home: 主页
+  archives: 归档
+  about: 关于
+  guestBook: 留言板
