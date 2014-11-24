@@ -1,21 +1,45 @@
-<% if (post.link){ %>
-  <h1 class="post-title">
-    <a href="<%- url_for(post.link) %>"><%= post.title %><span class="icon-link"></span></a>
-  </h1>
-<% } else if (post.title){ %>
-  <% if (index){ %>
+<% if(is_post()){ %>
+  <% if (post.link){ %>
     <h1 class="post-title">
-      <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <a href="<%- url_for(post.link) %>"><%= post.title %><span class="icon-link"></span></a>
     </h1>
+  <% } else if (post.title){ %>
+    <% if (index){ %>
+      <h1 class="post-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h1>
+    <% } else { %>
+      <h1 class="post-title"><%= post.title %></h1>
+    <% } %>
   <% } else { %>
-    <h1 class="post-title"><%= post.title %></h1>
+    <% if (index){ %>
+    <h1 class="post-title">
+      <a href="<%- url_for(post.path) %>"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></a>
+    </h1>
+    <% } else { %>
+      <h1 class="post-title"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></h1>
+    <% } %>
   <% } %>
 <% } else { %>
-  <% if (index){ %>
-  <h1 class="post-title">
-    <a href="<%- url_for(post.path) %>"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></a>
-  </h1>
+  <% if (post.link){ %>
+    <h2 class="post-title">
+      <a href="<%- url_for(post.link) %>"><%= post.title %><span class="icon-link"></span></a>
+    </h2>
+  <% } else if (post.title){ %>
+    <% if (index){ %>
+      <h2 class="post-title">
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </h2>
+    <% } else { %>
+      <h2 class="post-title"><%= post.title %></h2>
+    <% } %>
   <% } else { %>
-    <h1 class="post-title"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></h1>
+    <% if (index){ %>
+    <h2 class="post-title">
+      <a href="<%- url_for(post.path) %>"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></a>
+    </h2>
+    <% } else { %>
+      <h2 class="post-title"><time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time></h2>
+    <% } %>
   <% } %>
 <% } %>

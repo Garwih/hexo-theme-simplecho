@@ -15,13 +15,22 @@
       </nav>
     </div>
     <div id="logo">
-      <hgroup>
-      <h1 id="site-title">
-        <a href="<%- url_for() %>"><%= config.title %></a>
-      </h1>
-      <% if (config.subtitle){ %>
-        <h2 id="site-description"><%= config.subtitle %></h2>
+      <div class="hg">
+      <% if(is_home()){ %>
+        <h1 id="site-title">
+          <a href="<%- url_for() %>"><%= config.title %></a>
+        </h1>
+        <% if (config.subtitle){ %>
+          <h2 id="site-description"><%= config.subtitle %></h2>
+        <% } %>
+      <% } else { %>
+        <h2 id="site-title">
+          <a href="<%- url_for() %>"><%= config.title %></a>
+        </h2>
+        <% if (config.subtitle){ %>
+          <p id="site-description"><%= config.subtitle %></p>
+        <% } %>
       <% } %>
-      </hgroup>
+      </div>
     </div>
   </header>
