@@ -6,9 +6,9 @@
         <% } %>
         <a id="nav-search" class="icon-search fr" onclick="show_search()" title="<%= __('header.search') %>"></a>
         <div id="nav-search-input" class="hide">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-            <input type="hidden" name="q" value="site:<%= config.url %>">
-            <input type="text" class="input-text" name="q" placeholder="<%= __('header.search') %>">
+          <form class="search-form" onsubmit="return dispatch()">
+            <input type="hidden" id="site" value="site:<%= config.url %>">
+            <input type="text" id="q" class="input-text" name="q" placeholder="<%= __('header.search') %>">
             <input type="submit" value="" class="input-submit">
           </form>
         </div>
