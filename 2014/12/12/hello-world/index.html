@@ -31,9 +31,9 @@
         
         <a id="nav-search" class="icon-search fr" onclick="show_search()" title="Search"></a>
         <div id="nav-search-input" class="hide">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-            <input type="hidden" name="q" value="site:garwih.github.io/hexo-theme-simplecho">
-            <input type="text" class="input-text" name="q" placeholder="Search">
+          <form class="search-form" onsubmit="return dispatch()">
+            <input type="hidden" id="site" value="site:garwih.github.io/hexo-theme-simplecho">
+            <input type="text" id="q" class="input-text" name="q" placeholder="Search">
             <input type="submit" value="" class="input-submit">
           </form>
         </div>
@@ -52,6 +52,7 @@
       </div>
     </div>
   </header>
+
   <section id="main"><article class="post">
   <header class="post-head">
     
@@ -89,7 +90,7 @@
 <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.</p>
 </blockquote>
 <h2 id="Code">Code</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEachSorted</span><span class="params">(obj, iterator, context)</span> </span>{</div><div class="line">  <span class="keyword">var</span> keys = sortedKeys(obj);</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) {</div><div class="line">    iterator.call(context, obj[keys[i]], keys[i]);</div><div class="line">  }</div><div class="line">  <span class="keyword">return</span> keys;</div><div class="line">}</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEachSorted</span><span class="params">(obj, iterator, context)</span> </span>{</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  <span class="keyword">var</span> keys = sortedKeys(obj);</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; keys.length; i++) {</div><div class="line">    iterator.call(context, obj[keys[i]], keys[i]);</div><div class="line">  }</div><div class="line">  <span class="keyword">return</span> keys;</div><div class="line"></div><div class="line">}</div></pre></td></tr></table></figure>
 
 <h2 id="List_Types">List Types</h2>
 <h3 id="Definition_List_(dl)">Definition List (dl)</h3>

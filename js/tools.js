@@ -12,3 +12,19 @@ function show_search(){
       search_input.attributes.setNamedItem(class_name);
     };
 }
+
+function dispatch() {
+  var q = document.getElementById("q");
+  var site = document.getElementById("site");
+  if (q.value != "") {
+    var url = 'http://www.google.com/search?q=' + site.value + '%20' + q.value;
+    if (navigator.userAgent.indexOf('iPad') > -1 || navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iPhone') > -1) {
+      location.href = url;
+    } else {
+      window.open(url, "_blank");
+    }
+    return false;
+  } else {
+    return false;
+  }
+}

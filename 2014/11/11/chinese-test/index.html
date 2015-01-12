@@ -31,9 +31,9 @@
         
         <a id="nav-search" class="icon-search fr" onclick="show_search()" title="Search"></a>
         <div id="nav-search-input" class="hide">
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
-            <input type="hidden" name="q" value="site:garwih.github.io/hexo-theme-simplecho">
-            <input type="text" class="input-text" name="q" placeholder="Search">
+          <form class="search-form" onsubmit="return dispatch()">
+            <input type="hidden" id="site" value="site:garwih.github.io/hexo-theme-simplecho">
+            <input type="text" id="q" class="input-text" name="q" placeholder="Search">
             <input type="submit" value="" class="input-submit">
           </form>
         </div>
@@ -52,6 +52,7 @@
       </div>
     </div>
   </header>
+
   <section id="main"><article class="post">
   <header class="post-head">
     
