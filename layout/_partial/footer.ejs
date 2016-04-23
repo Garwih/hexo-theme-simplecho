@@ -1,35 +1,25 @@
   <footer id="footer">
     <div class="foot-warp">
-      <p>© 2014 <%= config.title %></p>
+      <p>© 2014-2016 <%= config.title %></p>
     </div>
   </footer>
-  <script src="<%- url_for() %>js/tools.js"></script>
   <% if (!is_archive()){ %>
   <% if (config.disqus_shortname){ %>
   <script>
-    var disqus_shortname = '<%= config.disqus_shortname %>';
-    <% if (page.permalink){ %>
-    var disqus_url = '<%= page.permalink %>';
+    <% if(is_post()) { %>
+      var disqus_shortname = '<%= config.disqus_shortname %>';
+      <% if (page.permalink){ %>
+      var disqus_url = '<%= page.permalink %>';
+      <% } %>
+    <% } else if(theme.disqus_home) { %>
+      var disqus_home = true;
+      var disqus_shortname = '<%= config.disqus_shortname %>';
     <% } %>
-    (function(){
-      var dsq = document.createElement('script');
-      dsq.type = 'text/javascript';
-      dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
   </script>
   <% } else if ((theme.duoshuo_shortname && theme.duoshuo_home) || (theme.duoshuo_shortname && is_post())) { %>
   <script type="text/javascript">
     var duoshuoQuery = {short_name:'<%= theme.duoshuo_shortname %>'};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] 
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
   </script>
   <% } %>
   <% } %>
+  <script src="<%- url_for() %>js/tools.js"></script>  

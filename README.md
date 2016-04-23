@@ -33,6 +33,7 @@ subtitle_show: true
 # Main
 duoshuo_shortname: 
 duoshuo_home: true
+disqus_home: true
 
 ~~~
 
@@ -40,6 +41,7 @@ duoshuo_home: true
 * subtitle_show - 首页 title 是否显示子标题，默认 true
 * duoshuo_shortname - 多说 ID
 * duoshuo_home - 是否在首页加载多说的 js 。如果首页需要显示评论数量，请选择 true (设置了多说 ID 之后才有效)
+* disqus_home - 是否在首页加载 Disqus 的 js。同上。
 
 ####Hexo 根目录下的 `_config.yml` ，修改部分如下
 ~~~ yaml
