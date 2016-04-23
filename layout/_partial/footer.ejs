@@ -5,17 +5,19 @@
   </footer>
   <% if (!is_archive()){ %>
   <% if (config.disqus_shortname){ %>
-  <script>
     <% if(is_post()) { %>
+    <script>
       var disqus_shortname = '<%= config.disqus_shortname %>';
       <% if (page.permalink){ %>
       var disqus_url = '<%= page.permalink %>';
       <% } %>
+    </script>
     <% } else if(theme.disqus_home) { %>
+    <script>
       var disqus_home = true;
       var disqus_shortname = '<%= config.disqus_shortname %>';
+    <script>
     <% } %>
-  </script>
   <% } else if ((theme.duoshuo_shortname && theme.duoshuo_home) || (theme.duoshuo_shortname && is_post())) { %>
   <script type="text/javascript">
     var duoshuoQuery = {short_name:'<%= theme.duoshuo_shortname %>'};
