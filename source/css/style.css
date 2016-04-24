@@ -444,7 +444,6 @@ html,body{
 }
 
 .post-content p{
-    overflow: hidden;
     word-wrap:break-word;
 }
 
@@ -466,7 +465,11 @@ html,body{
 
 .post-content .highlight {
   margin: 1.6em -75px;
-  padding: 30px;
+  padding: 20px;
+}
+
+.post-content .highlight table td {
+  color: #839496;
 }
 
 @media (max-width:1024px){
@@ -733,26 +736,23 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .typo code, .typo kbd{
-    display: inline-block;
-    margin: 0 0.1em;
-    padding: 0.1em 0.6em;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    background-color: #f7f7f7;
-    text-shadow: 0 1px 0 #fff;
+    padding: 2px 6px;
     white-space: nowrap;
-    font-size: 0.85em;
-    line-height: 1.2;
+    color: #555;
+    background: #eee;
+    border-radius: 4px;
+    font-size: 13px;
 }
 
 .typo code, .typo kbd, .typo pre, .typo samp{
-    font-family: 'Source Code Pro', Consolas, 'Liberation Mono', Courier, monospace, serif;
+    font-family: 'Source Code Pro', Consolas, 'Liberation Mono', Courier, 'PT Mono', "PingFang SC", "Microsoft YaHei", monospace, serif;
 }
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 .typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
 .typo-h1, .typo-h2, .typo-h3, .typo-h4, .typo-h5, .typo-h6{
   margin-bottom:0.4em;
+  margin-top: 1em;
   line-height:1.5;
 }
 

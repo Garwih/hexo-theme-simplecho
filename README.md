@@ -32,8 +32,8 @@ subtitle_show: true
 
 # Main
 duoshuo_shortname: 
-duoshuo_home: true
-disqus_home: true
+duoshuo_home: false
+disqus_home: false
 
 ~~~
 
