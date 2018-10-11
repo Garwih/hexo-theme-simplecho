@@ -4,14 +4,14 @@ Theme for [Hexo](http://hexo.io).
 
 Demo: http://garwih.github.io/hexo-theme-simplecho/
 
-##Install
+## Install
 修改 Hexo 根目录下 _config.yml 里面的 `theme` 为 `simplecho`
 
 ~~~
 git clone https://github.com/Garwih/hexo-theme-simplecho.git themes/simplecho
 ~~~
 
-##Update
+## Update
 
 进入 Hexo 根目录并执行
 ~~~
@@ -19,8 +19,8 @@ cd themes/simplecho
 git pull
 ~~~
 
-##Config
-####默认主题配置 `simplecho/_config.yml`
+## Config
+#### 默认主题配置 `simplecho/_config.yml`
 ~~~ yaml
 # Header
 menu:
@@ -43,7 +43,7 @@ disqus_home: false
 * duoshuo_home - 是否在首页加载多说的 js 。如果首页需要显示评论数量，请选择 true (设置了多说 ID 之后才有效)
 * disqus_home - 是否在首页加载 Disqus 的 js。同上。
 
-####Hexo 根目录下的 `_config.yml` ，修改部分如下
+#### Hexo 根目录下的 `_config.yml` ，修改部分如下
 ~~~ yaml
 archive: 1
 category: 1
@@ -61,9 +61,9 @@ language: zh-CN
 disqus_shortname: Disqus ID
 ~~~
 
-##Features
+## Features
 
-###Featured Image
+### Featured Image
 插入文章特色图片，在文章顶部加入 image 及图片链接
 ~~~
 title: post title
@@ -71,26 +71,26 @@ image: //example.com/example.jpg
 ---
 ~~~
 
-###No Title Post
+### No Title Post
 无标题，即 title 留空时，发表日期会作为标题
 
-###Link Post
+### Link Post
 ~~~ yaml
 title: Link Post
 link: http://www.google.com/
 ---
 ~~~
 
-###Video
+### Video
 插入视频时，为了自适应页面大小，请将视频分享代码放在 `class="video"` 中，例如
 ~~~ html
 <div class="video">视频分享代码</div>
 ~~~
 
 
-##Browser Support
+## Browser Support
 
 IE 8+, Opera, Chrome, Firefox, Safari
 
-##License
+## License
 [MIT License](http://opensource.org/licenses/MIT)
